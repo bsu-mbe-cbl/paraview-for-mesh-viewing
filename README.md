@@ -40,6 +40,8 @@ To install the [conda]/[mamba] package manager we're using to install Paraview, 
    cd path/to/containing/folder
    ```
 
+## Creating the Environment
+
 In order to set up the necessary environment:
 
 1. review and uncomment what you need in `environment.yml` and create an environment `paraview` with the help of [mamba] and [conda] with:
