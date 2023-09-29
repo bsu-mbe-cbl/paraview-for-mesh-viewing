@@ -134,7 +134,7 @@ Viewing INP files is handled by the meshio python package, and requires some man
 
 ## Upgrading & Reproducibility
 
-> Note: meshio did a major refactor following version 5.0.2, and we haven't gotten the newer versions to work. Paraview can be updated, until the
+> Note: meshio did a major refactor following version 5.0.2, and we haven't gotten the newer versions to work. Paraview can be updated, so long as the python version shipped with paraview (pvpython) remains Python 3.9
 
 1. Always keep your abstract (unpinned) dependencies updated in `paraview.yml`
 
