@@ -56,11 +56,13 @@ In order to set up the necessary environment:
    conda activate paraview
    ```
 
-3. Run paraview with:
+3. Test that we ca run paraview with:
 
    ```
    paraview
    ```
+
+   Then feel free to close the program.
 
 > Note: you will need to have the (paraview) environment activated for this command to work
 
