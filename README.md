@@ -44,9 +44,10 @@ To install the [conda]/[mamba] package manager we're using to install Paraview, 
 
 In order to set up the necessary environment:
 
-1. review and uncomment what you need in `environment.yml` and create an environment `paraview` with the help of [mamba] and [conda] with:
+1. A provided environment file `paraview.env` is a recipe for installing the necessary packages. Review it if you're interested, and create an environment `paraview` with the help of [mamba] and [conda] with:
 
    ```
+   conda activate base
    mamba env create -f paraview.yml -n paraview
    ```
 2. activate the new environment with:
@@ -60,6 +61,8 @@ In order to set up the necessary environment:
    ```
    paraview
    ```
+
+> Note: you will need to have the (paraview) environment activated for this command to work
 
 ## Creating a desktop shortcut
 
