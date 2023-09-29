@@ -8,6 +8,8 @@ We need a more efficient way to view STL and INP files than using the GUI of Hyp
 
 To install the [conda]/[mamba] package manager we're using to install Paraview, follow the [mamba] installation instructions:
 
+> Note: if you already have conda on your computer, you cant skip this step. However, if you don't have mamba, you will need to replace mamba -> conda in the code snippets.
+
 1. Navigate to the [mamba installation] instructions page, which will contain a link to the [miniforge downloader repository].
 
 2. Download the installer for the correct OS, under the *Miniforge3* heading
@@ -50,6 +52,9 @@ In order to set up the necessary environment:
    conda activate base
    mamba env create -f paraview.yml -n paraview
    ```
+
+   > Note: You should see (base) before your normal CMD prompt signature after activation. If this is not true, you can reopen the Miniforge Prompt and run the commands there.
+
 2. activate the new environment with:
 
    ```
