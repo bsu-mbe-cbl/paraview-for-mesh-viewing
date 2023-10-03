@@ -89,10 +89,10 @@ which will output something like this:
    paraview                 C:\Users\kalin\mambaforge\envs\paraview
    ```
 
-3. Copy everything before the \envs\paraview part (C:\Users\kain\mamaforge in this example), and use it to create this shortcut location/target:
+3. Copy everything before the \envs\paraview part (C:\Users\kain\mamaforge in this example), and use it to create a shortcut location/target similar to this:
 
    ```
-   C:\Windows\System32\cmd.exe /K C:\Users\kalin\mambaforge\condabin\activate.bat C:\Users\kalin\mambaforge\envs\core & paraview & exit
+   C:\Windows\System32\cmd.exe /K C:\Users\kalin\mambaforge\condabin\activate.bat C:\Users\kalin\mambaforge\envs\paraview & paraview & exit
    ```
 
 4. Click "Next", and name the shortcut "Paraview"
