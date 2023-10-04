@@ -86,13 +86,13 @@ To create a desktop shortcut, we need to point our shortcut to a couple of paths
 which will output something like this:
 
    ```
-   paraview                 C:\Users\kalin\mambaforge\envs\paraview
+   paraview                 C:\Users\kalin\AppData\Local\miniforge3\envs\paraview
    ```
 
-3. Copy everything before the \envs\paraview part (C:\Users\kain\mamaforge in this example), and use it to create a shortcut location/target similar to this:
+3. Copy everything before the \envs\paraview part (C:\Users\kain\AppData\Local\miniforge3 in this example), and use it to create a shortcut location/target similar to this:
 
    ```
-   C:\Windows\System32\cmd.exe /K C:\Users\kalin\mambaforge\condabin\activate.bat C:\Users\kalin\mambaforge\envs\paraview & paraview & exit
+   C:\Windows\System32\cmd.exe /K C:\Users\kalin\AppData\Local\miniforge3\condabin\activate.bat C:\Users\kalin\AppData\Local\miniforge3\envs\paraview & paraview & exit
    ```
 
 4. Click "Next", and name the shortcut "Paraview"
@@ -110,7 +110,7 @@ Viewing INP files is handled by the meshio python package, and requires some man
 3. Click "Load New" and navigate to the meshio plugin, which is located in the python environment we created earlier. The path will look something like this:
 
    ```
-   C:\Users\kalin\mambaforge\envs\paraview\share\paraview-5.9\plugins\paraview-meshio-plugin.py
+   C:\Users\kalin\AppData\Local\miniforge3\envs\paraview\share\paraview-5.9\plugins\paraview-meshio-plugin.py
    ```
 
    > Note the root of the path is the same one we found using `conda env list` earlier, but this time we include the \envs\paraview part.
