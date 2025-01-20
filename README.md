@@ -157,7 +157,7 @@ Viewing INP files is handled by the meshio python package, and requires some man
 
 > Note: **Do not** overwrite paraview.lock.yml until you have thoroughly tested your updated environment file. It can be used to return to your previous environment if something goes wrong.
 
-[mamba installation]: https://mamba.readthedocs.io/en/latest/mamba-installation.html#mamba-install
+[mamba installation]: https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html
 [miniforge downloader repository]: https://github.com/conda-forge/miniforge#miniforge3
 [mamba]: https://mamba.readthedocs.io/
 [conda]: https://docs.conda.io/
