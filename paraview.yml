@@ -5,10 +5,11 @@ dependencies:
   - python=3.9
   - pip
   - paraview
-  # # - paraview=5.10
+  - meshio==5.0.2
+  - paraview=5.11
   # - paraview=5.10.1=py39h581a1fe_105_qt
   - pip:
-    - meshio[all]==5.0.2
+    # - meshio[all]==5.0.2
 # variables:
 # conda env config vars set VAR=1
   # MAMBA_NO_BANNER: '1'
