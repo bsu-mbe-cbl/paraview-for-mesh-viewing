@@ -2,7 +2,7 @@
 
 > Quick viewing of STL and INP files using Paraview
 
-We need a more efficient way to view STL and INP files than using the GUI of Hypermesh. This project uses Paraview to quickly view STL and INP files, the way I've been doing it during my automatic meshing project.
+We need a more efficient way to view STL and (simple) INP files than using the GUI of Hypermesh. This project uses Paraview to quickly view STL and INP files, the way I've been doing it during my automatic meshing project.
 
 ## Installation
 
@@ -10,45 +10,76 @@ To install the [conda]/[mamba] package manager we're using to install Paraview, 
 
 > Note: if you already have conda on your computer, you cant skip this step. However, if you don't have mamba, you will need to replace mamba -> conda in the code snippets.
 
+
+### Using [winget] to install
+
+1. In your terminal enter
+
+   ```shell
+   winget show --Id Condaforge.Miniforge3 --Source winget  # to examine before install
+   ```
+
+   ```shell
+   winget install --Id CondaForge.Miniforge3 --Source winget
+   ```
+
+2. Hit the Windows key and type "Miniforge Prompt" to confirm you have access to the Miniforge prompt.
+
+### Using binaries to install
+
 1. Navigate to the [mamba installation] instructions page, which will contain a link to the [miniforge downloader repository].
 
 2. Download the installer for the correct OS, under the *Miniforge3* heading
 
-> Warning: You want Miniforge3, *NOT* Miniforge3-pypy3
+   > Warning: You want Miniforge3, *NOT* Miniforge3-pypy3
 
 3. Run the installer using the default "Just Me (recommended)" option.
 
-4. Hit the Windows key and type "Miniforge Prompt" to open the Miniforge prompt.
+4. Hit the Windows key and type "Miniforge Prompt" to confirm you have access to the Miniforge prompt.
 
-5. Enter this into the Miniforge prompt:
+## Allowing conda / mamba commands to work in other terminals
 
-   ```
+> WARNING: I had to downgrade PowerShell from 7.5.0 to 7.4.7 for the `conda` and `mamba` commands to work correctly. Keep an eye on this [issue](https://github.com/issues/created?issue=conda-forge|miniforge|760) if you're a PowerShell user
+
+1. Hit the Windows key and type "Miniforge Prompt" to open the Miniforge prompt.
+
+2. Enter this into the Miniforge prompt:
+
+   ```shell
    mamba init
    ```
 
-   ```
+   ```shell
    conda config --set auto_activate_base false
    ```
 
-   ```
+   ```shell
    conda config --set channel_priority strict
    ```
 
-6. Close the Miniforge prompt and open a CMD prompt.
+3. Close the Miniforge prompt and open a CMD prompt to check if the conda commands are available.
 
-7. Navigate to the directory containing paraview.yml and paraview.lock.yml
+   ```shell
+   conda --help
+   mamba --help
+   ```
 
-   ```
-   cd path/to/containing/folder
-   ```
 
 ## Creating the Environment
+
+1. You'll need to [download this repo] or [clone] this repository before starting the installation
+
+1. Navigate to the repo directory containing paraview.yml and paraview.lock.yml
+
+   ```shell
+   cd path/to/containing/folder
+   ```
 
 In order to set up the necessary environment:
 
 1. A provided environment file `paraview.env` is a recipe for installing the necessary packages. Review it if you're interested, and create an environment `paraview` with the help of [mamba] and [conda] with:
 
-   ```
+   ```shell
    conda activate base
    mamba env create -f paraview.yml -n paraview
    ```
@@ -57,13 +88,13 @@ In order to set up the necessary environment:
 
 2. activate the new environment with:
 
-   ```
+   ```shell
    conda activate paraview
    ```
 
-3. Test that we ca run paraview with:
+3. Test that we can run paraview with:
 
-   ```
+   ```shell
    paraview
    ```
 
@@ -79,13 +110,13 @@ To create a desktop shortcut, we need to point our shortcut to a couple of paths
 
 2. Discover where conda is installed
 
-   ```
+   ```shell
    conda env list
    ```
 
 which will output something like this:
 
-   ```
+   ```shell
    paraview                 C:\Users\kalin\AppData\Local\miniforge3\envs\paraview
    ```
 
@@ -94,6 +125,8 @@ which will output something like this:
    ```
    C:\Windows\System32\cmd.exe /K C:\Users\kalin\AppData\Local\miniforge3\condabin\activate.bat C:\Users\kalin\AppData\Local\miniforge3\envs\paraview & paraview & exit
    ```
+
+   > Note: The field for creating your shortcut require these to be on one line
 
 4. Click "Next", and name the shortcut "Paraview"
 
@@ -155,9 +188,12 @@ Viewing INP files is handled by the meshio python package, and requires some man
    conda env update -f environment.yml --prune
    ```
 
-> Note: **Do not** overwrite paraview.lock.yml until you have thoroughly tested your updated environment file. It can be used to return to your previous environment if something goes wrong.
+> Warning: **Do not** overwrite paraview.lock.yml until you have thoroughly tested your updated environment file. It can be used to return to your previous environment if something goes wrong.
 
 [mamba installation]: https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html
 [miniforge downloader repository]: https://github.com/conda-forge/miniforge#miniforge3
 [mamba]: https://mamba.readthedocs.io/
 [conda]: https://docs.conda.io/
+[winget]: https://learn.microsoft.com/en-us/windows/package-manager/winget/
+[clone]: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+[download this repo]:https://github.com/bsu-mbe-cbl/paraview-for-mesh-viewing/archive/refs/heads/main.zip
