@@ -81,7 +81,7 @@ In order to set up the necessary environment:
 
    ```shell
    conda activate base
-   mamba env create -f paraview.yml -n paraview
+   mamba env create --file paraview.yml --name paraview
    ```
 
    > Note: You should see (base) before your normal CMD prompt signature after activation. If this is not true, you can reopen the Miniforge Prompt and run the commands there.
@@ -179,13 +179,13 @@ Viewing INP files is handled by the meshio python package, and requires some man
 2. Create concrete dependencies as `paraview.lock.yml` for the exact reproduction of your
    environment with:
    ```bash
-   conda env export -n paraview -f paraview.lock.yml
+   mamba env export --name paraview --file paraview.lock.yml
    ```
    For multi-OS development, consider using `--no-builds` during the export.
 
-3. Update your current environment with respect to a new `environment.yml` using:
+3. Update your current environment with respect to a new `paraview.yml` using:
    ```bash
-   conda env update -f environment.yml --prune
+   mamba env update --file paraview.yml --prune
    ```
 
 > Warning: **Do not** overwrite paraview.lock.yml until you have thoroughly tested your updated environment file. It can be used to return to your previous environment if something goes wrong.
